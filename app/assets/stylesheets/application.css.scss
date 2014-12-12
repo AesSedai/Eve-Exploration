@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require _bootstrap-sprockets
+ *= require _bootstrap
+ *= require angular-ui-select
+ */
+
+@import "**/*";
+
+html, body, #MainCtrl {
+  height: 100%;
+}
+#search-box {
+  width: 100%;
+  border: none;
+  border-radius: 0px;
+}
+form.navbar-form {
+  width: 100%;
+  display: flex;
+  button[type='button'] {
+    border-radius: 0;
+  }
+}
+form.navbar-form > div.form-group {
+  width: 100%;
+}
+
+.unselectable {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;
+}
+
+.fill {
+  height: 100%
+}
