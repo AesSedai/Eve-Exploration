@@ -16,4 +16,5 @@
 #= require main.js
 #= require lodash
 #= require restangular.js
+#= require xml2json.js
 #= require_tree .

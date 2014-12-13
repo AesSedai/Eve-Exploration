@@ -1,10 +1,8 @@
-var app = angular.module("eve", ['restangular', 'ui.select', 'ui.bootstrap']);
+var app = angular.module("eve", ['restangular', 'ui.bootstrap']);
 
 app.config(function($httpProvider, RestangularProvider) {
-  $httpProvider.defaults.headers.common['X-CSRF-Token'] =
-    $('meta[name=csrf-token]').attr('content');
 
-  RestangularProvider.setBaseUrl('http://dev.esume.com/' + 'api/v1');
+  RestangularProvider.setBaseUrl('https://api.eveonline.com/');
 
   /*
     if(angular.mock){
