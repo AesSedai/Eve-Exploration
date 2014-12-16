@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'rails', '~> 4.1'
 gem 'bootstrap-sass', '~> 3.2.0'
@@ -12,6 +13,7 @@ gem 'lodash-rails'
 gem 'sass-rails', '>= 4.0.4'
 gem 'jquery-rails'
 gem 'mysql2'
+gem 'rails-assets-angular-datatables'
 
 group :development, :test do
   gem 'teaspoon'

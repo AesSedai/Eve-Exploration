@@ -28,7 +28,7 @@ function X2JS(config) {
 		if(config.escapeMode === undefined) {
 			config.escapeMode = true;
 		}
-		config.attributePrefix = config.attributePrefix || "_";
+		config.attributePrefix = config.attributePrefix || "";
 		config.arrayAccessForm = config.arrayAccessForm || "none";
 		config.emptyNodeForm = config.emptyNodeForm || "text";
 		if(config.enableToStringFunc === undefined) {

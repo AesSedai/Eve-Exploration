@@ -1,13 +1,25 @@
 Index
 <div class="container-fluid">
-  <div class="col-md-2">
-    <div ng-repeat="system in data">
-      {{system._solarSystemID}}
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div ng-repeat="system in data">
-      {{system._shipJumps}}
-    </div>
+  <div class="col-md-6">
+
+    <table datatable="ng" dt-options="" dt-column-defs="" class="row-border hover">
+      <thead>
+      <tr>
+        <th>Region</th>
+        <th>Constellation</th>
+        <th>Solar System</th>
+        <th>Jumps</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="system in data">
+        <td>{{ system.regionID }}</td>
+        <td>{{ system.constellationID }}</td>
+        <td>{{ system.solarSystemName }}</td>
+        <td>{{ system.shipJumps }}</td>
+      </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>

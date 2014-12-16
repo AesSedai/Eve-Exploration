@@ -12,6 +12,8 @@
 #
 #= require jquery
 #= require angular/angular
+#= require angular-datatables
+#= require datatables
 #= require angular-ui-bootstrap-tpls
 #= require main.js
 #= require lodash

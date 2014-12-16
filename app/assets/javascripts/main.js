@@ -1,8 +1,8 @@
-var app = angular.module("eve", ['restangular', 'ui.bootstrap']);
+var app = angular.module("eve", ['restangular', 'ui.bootstrap', 'datatables']);
 
 app.config(function($httpProvider, RestangularProvider) {
 
-  RestangularProvider.setBaseUrl('https://api.eveonline.com/');
+  RestangularProvider.setBaseUrl('');
 
   /*
     if(angular.mock){
