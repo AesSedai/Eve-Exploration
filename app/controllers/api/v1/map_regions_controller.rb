@@ -6,6 +6,8 @@ module Api
       def index
         if params[:regionID].present?
           render json: MapRegion.find(params[:regionID])
+        else
+          render json: MapRegion.all
         end
       end
 

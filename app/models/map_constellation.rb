@@ -1,9 +1,8 @@
 class MapConstellation < ActiveRecord::Base
+  self.table_name = 'map_constellation'
+  self.primary_key = :constellation_id
 
-  self.table_name = 'mapConstellations'
-
-  belongs_to :map_region
-
-  has_many :map_solar_systems, foreign_key: 'constellationID'
+  belongs_to :map_region, foreign_key: 'region_id'
+  has_many :map_solar_systems, foreign_key: 'constellation_id'
 
 end

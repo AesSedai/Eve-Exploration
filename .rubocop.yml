@@ -1,0 +1,28 @@
+inherit_from: .rubocop_todo.yml
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'db/**/*'
+    - bin/rails
+    - bin/rake
+    - bin/spring
+    - tmp/**/*
+    - test/dummy/spec/teaspoon_env.rb
+StringLiterals:
+  EnforcedStyle: single_quotes
+  Enabled: true
+Metrics/LineLength:
+  Exclude:
+    - config/**/*
+  Description: 'Limit lines to 130 characters.'
+  Max: 130
+Rails/HasAndBelongsToMany:
+  Enabled: true
+Style/ClassAndModuleChildren:
+  Enabled: true
+Metrics/MethodLength:
+  Max: 40
+Style/Documentation:
+  Enabled: false
+InlineComment:
+  Enabled: false

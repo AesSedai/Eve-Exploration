@@ -10,6 +10,7 @@ Bundler.require(*Rails.groups)
 module EveExploration
   class Application < Rails::Application
     config.autoload_paths += %w(#{app.root}/models)
+    config.time_zone = 'Central Time (US & Canada)'
 
     console do
       ActiveRecord::Base.connection

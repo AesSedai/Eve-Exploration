@@ -14,6 +14,9 @@ gem 'sass-rails', '>= 4.0.4'
 gem 'jquery-rails'
 gem 'mysql2'
 gem 'rails-assets-angular-datatables'
+gem 'crack'
+gem 'plissken'
+gem 'activerecord-import'
 
 group :development, :test do
   gem 'teaspoon'
@@ -22,5 +25,6 @@ group :development, :test do
   gem 'guard-teaspoon'
   gem 'sqlite3'
   gem 'rubocop'
+  gem 'rmre'
 
 end

@@ -2,7 +2,7 @@ var app = angular.module("eve", ['restangular', 'ui.bootstrap', 'datatables']);
 
 app.config(function($httpProvider, RestangularProvider) {
 
-  RestangularProvider.setBaseUrl('');
+  RestangularProvider.setBaseUrl('http://dev.eve.com/api/v1');
 
   /*
     if(angular.mock){

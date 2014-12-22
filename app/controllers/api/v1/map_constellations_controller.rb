@@ -6,6 +6,8 @@ module Api
       def index
         if params[:constellationID].present?
           render json: MapConstellation.find(params[:constellationID])
+        else
+          render json: MapConstellation.all
         end
       end
 

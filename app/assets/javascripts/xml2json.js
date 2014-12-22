@@ -206,7 +206,7 @@ function X2JS(config) {
 
 	function parseDOMChildren( node, path ) {
 		if(node.nodeType == DOMNodeTypes.DOCUMENT_NODE) {
-			var result = new Object;
+			var result = {};
 			var nodeChildren = node.childNodes;
 			// Alternative for firstElementChild which is not supported in some environments
 			for(var cidx=0; cidx <nodeChildren.length; cidx++) {
@@ -220,7 +220,7 @@ function X2JS(config) {
 		}
 		else
 		if(node.nodeType == DOMNodeTypes.ELEMENT_NODE) {
-			var result = new Object;
+			var result = {};
 			result.__cnt=0;
 			
 			var nodeChildren = node.childNodes;
@@ -433,7 +433,7 @@ function X2JS(config) {
 				
 				var subObj = jsonObj[it];						
 				
-				var attrList = parseJSONAttributes( subObj )
+				var attrList = parseJSONAttributes( subObj );
 				
 				if(subObj == null || subObj == undefined) {
 					result+=startTag(subObj, it, attrList, true);
