@@ -15,6 +15,7 @@
 #= require angular-datatables
 #= require datatables
 #= require angular-ui-bootstrap-tpls
+#= require angular-timer
 #= require main.js
 #= require lodash
 #= require restangular.js

@@ -1,4 +1,4 @@
-var app = angular.module("eve", ['restangular', 'ui.bootstrap', 'datatables']);
+var app = angular.module("eve", ['restangular', 'ui.bootstrap', 'datatables', 'timer']);
 
 app.config(function($httpProvider, RestangularProvider) {
 

@@ -17,6 +17,7 @@ gem 'rails-assets-angular-datatables'
 gem 'crack'
 gem 'plissken'
 gem 'activerecord-import'
+gem 'rails-assets-angular-timer'
 
 group :development, :test do
   gem 'teaspoon'
