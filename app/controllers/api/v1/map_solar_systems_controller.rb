@@ -11,9 +11,6 @@ module Api
 
       def index
 
-        l = Logger.new('log/test3.log')
-        l.error("PARAMS: #{params.inspect}")
-
         if params[:solar_system_id].present?
           update_jumps
           ids = params[:solar_system_id]
@@ -70,22 +67,22 @@ module Api
           resp = Net::HTTP.get_response(URI.parse(url)) # get_response takes an URI object
           data = Crack::XML.parse(resp.body).to_snake_keys
 
-          cache_time = (data['eveapi']['cached_until'].to_time - 6.hours).to_datetime
+          cache_time = (data[:eveapi][:cached_until].to_time - 6.hours).to_datetime
 
-          data['eveapi']['result']['rowset']['row'].each do |system|
-            batch << MapJumpCache.new(:solar_system_id => system['solar_system_id'], :ship_jumps => system['ship_jumps'], :cached_until => cache_time)
+          data[:eveapi][:result][:rowset][:row].each do |system|
+            batch << MapJumpCache.new(:solar_system_id => system[:solar_system_id], :ship_jumps => system[:ship_jumps], :cached_until => cache_time)
             if batch.size > batch_size
               MapJumpCache.import(batch)
               batch = []
             end
           end
 
-          cached_systems = data['eveapi']['result']['rowset']['row'].map { |s| s['solar_system_id'] }
+          cached_systems = data[:eveapi][:result][:rowset][:row].map { |s| s[:solar_system_id] }
 
           no_jump_systems = MapSolarSystem.where('map_solar_system.solar_system_id NOT IN (?)', cached_systems)
 
           no_jump_systems.each do |system|
-            batch << MapJumpCache.new(:solar_system_id => system['solar_system_id'], :ship_jumps => 0, :cached_until => cache_time)
+            batch << MapJumpCache.new(:solar_system_id => system[:solar_system_id], :ship_jumps => 0, :cached_until => cache_time)
             if batch.size > batch_size
               MapJumpCache.import(batch)
               batch = []

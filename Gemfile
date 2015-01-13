@@ -18,6 +18,7 @@ gem 'crack'
 gem 'plissken'
 gem 'activerecord-import'
 gem 'rails-assets-angular-timer'
+gem 'responders'
 
 group :development, :test do
   gem 'teaspoon'
